@@ -1,0 +1,49 @@
+﻿@model RedBadgeData.Task
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Task Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal text-secondary">
+        <dt>
+            @Html.DisplayNameFor(model => model.Project.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDone)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TaskId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

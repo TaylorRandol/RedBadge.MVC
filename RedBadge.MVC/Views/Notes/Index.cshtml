@@ -1,0 +1,51 @@
+﻿@model IEnumerable<RedBadgeData.Note>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Notes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table text-secondary">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Task.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Task.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedUtc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedUtc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NoteId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NoteId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NoteId })
+        </td>
+    </tr>
+}
+
+</table>
